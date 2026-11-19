@@ -8,7 +8,6 @@ A curated collection of programming assignments completed for **Foundations of D
 **Institution:** Sharif University of Technology  
 **Term:** Fall 2025  
 **Instructor:** Dr. Khalaj  
-**Course grade:** 20/20
 
 This repository documents a progression from practical data acquisition and exploratory analysis to statistical inference, classical machine learning, deep learning, generative modeling, neural architecture search, and reproducible ML workflows.
 
