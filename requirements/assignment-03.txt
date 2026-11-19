@@ -1,0 +1,13 @@
+jupyterlab
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+scikit-learn
+tensorflow
+keras
+h2o
+dvc
+openpyxl
+xlrd

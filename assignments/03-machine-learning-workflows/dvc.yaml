@@ -1,0 +1,20 @@
+stages:
+  preprocess:
+    cmd: python preprocess.py data/raw/titanic.xls 
+      data/processed/titanic_processed.csv
+    deps:
+    - data/raw/titanic.xls
+    - preprocess.py
+    outs:
+    - data/processed/titanic_processed.csv
+  train:
+    cmd: python train.py data/processed/titanic_processed.csv models/model.pkl 
+      metrics.json
+    deps:
+    - data/processed/titanic_processed.csv
+    - train.py
+    outs:
+    - models/model.pkl
+    metrics:
+    - metrics.json:
+        cache: false

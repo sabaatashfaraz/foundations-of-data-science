@@ -1,0 +1,40 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python preprocess.py data/raw/titanic.xls 
+      data/processed/titanic_processed.csv
+    deps:
+    - path: data/raw/titanic.xls
+      hash: md5
+      md5: 1eba92f0a33731cc7d0d380591c98151
+      size: 289792
+    - path: preprocess.py
+      hash: md5
+      md5: db72f891273ceddfff6cfda865140a1c
+      size: 2360
+    outs:
+    - path: data/processed/titanic_processed.csv
+      hash: md5
+      md5: 2bca87f8d596b685d72a24a704f81f93
+      size: 34239
+  train:
+    cmd: python train.py data/processed/titanic_processed.csv models/model.pkl 
+      metrics.json
+    deps:
+    - path: data/processed/titanic_processed.csv
+      hash: md5
+      md5: 2bca87f8d596b685d72a24a704f81f93
+      size: 34239
+    - path: train.py
+      hash: md5
+      md5: bc79000969c4f0262d464c2d86f52e1e
+      size: 1813
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: d80ceb898ff70cc2cbd34f10503bcbfd
+      size: 184
+    - path: models/model.pkl
+      hash: md5
+      md5: 960a0380f8f14a65cf7064c244abbeb5
+      size: 937
